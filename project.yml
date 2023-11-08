@@ -8,6 +8,7 @@ packages:
       - name: main
         main: "main"
         runtime: python:default
+        web: false
         limits: {}
         triggers:
           - name: daily
