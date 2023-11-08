@@ -1,0 +1,16 @@
+environment:
+  TELEGRAM_API_TOKEN: "${TELEGRAM_API_TOKEN}"
+  CHAT_IDS: "${CHAT_IDS}"
+packages:
+  - name: supplement_scraper
+    shared: false
+    functions:
+      - name: main
+        main: "main"
+        runtime: python:default
+        limits: {}
+        triggers:
+          - name: daily
+            sourceType: scheduler
+            sourceDetails:
+              cron: 0 16 * * *
